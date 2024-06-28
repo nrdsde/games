@@ -48,12 +48,10 @@
         </div>
     </div>
 
-    <!-- Additional body modules -->
-
+    <script src="Build/mrc.loader.js"></script>
     <script>
         const hideFullScreenButton = "";
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/mrc.loader.js";
         const config = {
             dataUrl: buildUrl + "/mrc.data.unityweb",
             frameworkUrl: buildUrl + "/mrc.framework.js.unityweb",
@@ -96,10 +94,6 @@
         window.addEventListener('touchstart', () => {
             FocusGame();
         });
-
-        let StartUnityInstance;
-        const script = document.createElement("script");
-        script.src = loaderUrl;
 
 		createUnityInstance(canvas, config, (progress) => {
 			spinner.style.display = "none";
