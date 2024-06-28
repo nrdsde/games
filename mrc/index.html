@@ -29,9 +29,6 @@
             height: 100%;
         }
     </style>
-
-    <!-- Additional head modules -->
-
 </head>
 <body class="dark">
 
@@ -50,15 +47,14 @@
 
     <script src="Build/mrc.loader.js"></script>
     <script>
-        const hideFullScreenButton = "";
         const buildUrl = "Build";
         const config = {
             dataUrl: buildUrl + "/mrc.data.unityweb",
             frameworkUrl: buildUrl + "/mrc.framework.js.unityweb",
             codeUrl: buildUrl + "/mrc.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-            companyName: "DefaultCompany",
-            productName: "clckr",
+            companyName: "nerdside",
+            productName: "mrc",
             productVersion: "1.0"
         };
 
@@ -71,11 +67,11 @@
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             container.className = "unity-mobile";
-
+            
         }
 
         // Фоновое изображение при загрузке игры. При сборке билда код меняется взависимости от настроек проекта.
-
+        
         loadingCover.style.background = "url('background.jpg') center / cover";
         loadingCover.style.display = "";
 
@@ -106,7 +102,6 @@
 		});
 
 		console.log('Init Game Success');
-
     </script>
 </body>
 </html>
