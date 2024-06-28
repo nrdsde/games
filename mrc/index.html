@@ -73,11 +73,11 @@
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             container.className = "unity-mobile";
-            
+
         }
 
         // Фоновое изображение при загрузке игры. При сборке билда код меняется взависимости от настроек проекта.
-        
+
         loadingCover.style.background = "url('background.jpg') center / cover";
         loadingCover.style.display = "";
 
@@ -101,22 +101,18 @@
         const script = document.createElement("script");
         script.src = loaderUrl;
         script.onload = () => {
-            StartUnityInstance = function () {
-                createUnityInstance(canvas, config, (progress) => {
-                    spinner.style.display = "none";
-                    progressBarEmpty.style.display = "";
-                    progressBarFull.style.width = `${100 * progress}%`;
-                }).then((unityInstance) => {
-                    loadingCover.style.display = "none";
-                }).catch((message) => {
-                    console.error(message);
-                });
-            };
+			createUnityInstance(canvas, config, (progress) => {
+				spinner.style.display = "none";
+				progressBarEmpty.style.display = "";
+				progressBarFull.style.width = `${100 * progress}%`;
+			}).then((unityInstance) => {
+				loadingCover.style.display = "none";
+			}).catch((message) => {
+				console.error(message);
+			});
 
+			console.log('Init Game Success');
         };
-
-		StartUnityInstance();
-		console.log('Init Game Success');
     </script>
 </body>
 </html>
